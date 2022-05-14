@@ -1,0 +1,27 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Watch</title>
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+    <div class="cls-1">
+        <p>Current Time: <span id="time"></span></p>
+        <hr>
+    </div>
+    <script>
+        let a;
+        let date;
+        let time;
+        const options = { weekday: 'long', year: 'numeric', month: 'long',day: 'numeric'};
+        setInterval(() => {
+            a = new Date();
+            date = a.toLocaleDateString(undefined, options);
+            time = a.getHours() +":"+ a.getMinutes()+":"+a.getSeconds()
+            document.getElementById('time').innerHTML = time+ '<br>on ' + date
+        }, 1000);
+    </script>
+</body>
+</html>
